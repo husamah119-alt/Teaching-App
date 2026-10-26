@@ -1,0 +1,10 @@
+services:
+  riwaq:
+    build: .
+    ports:
+      - "8501:8501"
+    volumes:
+      - riwaq-data:/app/data
+    restart: unless-stopped
+volumes:
+  riwaq-data:
