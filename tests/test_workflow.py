@@ -110,7 +110,7 @@ def test_corrupt_progress_preserved(local_data):
 def test_streamlit_learning_flow(local_data):
     from streamlit.testing.v1 import AppTest
 
-    app = AppTest.from_file(str(Path(__file__).parents[1] / "app.py"), default_timeout=30).run()
+    app = AppTest.from_file(str(Path(__file__).parents[1] / "learning_app.py"), default_timeout=30).run()
     assert not app.exception
     assert len(app.selectbox[1].options) == 1
     next(c for c in app.checkbox if c.label == "قرأت هذا الجزء وراجعت فهمي").check().run()
